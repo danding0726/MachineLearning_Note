@@ -43,5 +43,54 @@ $$
 
 ### Step3 Gradient Descent 
 
+#### For one parameter
 
+$$
+\omega^*=argmin_\omega{L(\omega)}
+$$
+
+1.pick initial value $\omega^0$
+
+2.$\omega^1 \leftarrow \omega^0-\eta*\frac{dL}{d\omega}|_{\omega=\omega^0}$ 
+
+3.$\omega^2 \leftarrow \omega^1-\eta*\frac{dL}{d\omega}|_{\omega=\omega^1}$
+
+.... => Local optimal (not global)
+
+#### For two parameters
+
+1.$\omega^1 \leftarrow \omega^0-\eta*\frac{dL}{d\omega}|_{\omega=\omega^0,b=b^0}$  
+
+$b^1 \leftarrow b^0-\eta*\frac{dL}{db}|_{\omega=\omega^0,b=b^0}$
+
+2.$\omega^2 \leftarrow \omega^1-\eta*\frac{dL}{d\omega}|_{\omega=\omega^1,b=b^1}$  
+
+$b^2 \leftarrow b^1-\eta*\frac{dL}{db}|_{\omega=\omega^1,b=b^1}$
+
+......
+
+### For Many Types
+
+#### back to design model
+
+$$
+y=b_1*\delta(x_s=pidgey)+\omega_1*\delta(x_s=pidgey)*x_{cp}+....+b_4*\delta(x_s=Eevee)+\omega_4*\delta(x_s=Eevee)
+$$
+
+$$
+\delta=\begin{cases}
+1, &x_s=type\\
+0, &x_s\neq type
+\end{cases}
+$$
+
+#### Regularization
+
+$$
+L=\sum_n{(\hat{y}-(b+\sum{\omega_ix_i})})^2+\lambda\sum{w_i^2}
+$$
+
+$\lambda$越大，找到的越平滑
+
+------
 
