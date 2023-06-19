@@ -129,4 +129,83 @@ Perceptron,SVM
 
 
 
-### Generative Model
+### Generative Model(Gaussian Distribution)
+
+$$
+f_{\mu,\sum(x)}=\frac{1}{(2\pi)^{D/2}}\frac{1}{|\sum|^{1/2}}exp\lbrace\frac{-1}{2}(x-\mu)^T*{\sum}^{-1}(x-\mu)\rbrace
+$$
+
+Determined by Mean $\mu$ ,convariance matrix $\sum$
+
+#### Maximum Likelihood
+
+![Likelihood](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/Likelihood.png?token=AR2JMK7QXY27QM2G7GJMAB3ESCYZY)
+$$
+L(\mu,\sum)=f_{\mu,\sum}(x^1)*f_{\mu,\sum}(x^2).....f_{\mu,\sum}(x^79)
+$$
+
+$$
+\Rightarrow(\mu^*,{\sum}^*)=argMax_{\mu,\sum}L(\mu,\sum)
+$$
+
+$$
+\mu^*=\frac{1}{79}\sum^{79}_{n=1}x^n\\
+{\sum}^*=\frac{1}{79}\sum_{n=1}^{79}(x^n-\mu^*)(x^n-\mu^*)^T
+$$
+
+#### Back To Classification
+
+![image-20230619215322797](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/Classification_Operation?token=AR2JMK7RMROKMAW67H3DS6LESCZMO)
+$$
+P(C_1|x)>0.5\Rightarrow x\in Class1
+$$
+从多维空间来看增加更多参数容易导致overfitting 
+
+### Resolution
+
+给两边分类相同的$\sum$ 
+$$
+L(\mu_1,\mu_2,\sum)=f_{\mu_1,\sum}(x^1)*f_{\mu_1,\sum}(x^2).....f_{\mu_1,\sum}(x^{79})f_{\mu_2,\sum}(x^{80})...f_{\mu_2,\sum}(x^{140})
+$$
+
+$$
+\Rightarrow\mu_1=\mu_2\\
+\Rightarrow\sum=\frac{79}{140}{\sum}^1+\frac{61}{140}{\sum}^2
+$$
+
+![image-20230619220430716](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/After_Modifying.png?token=AR2JMKYBSWAK42SGIRBOHY3ESC2TI)
+
+### Three Steps
+
+#### Function Set(Model)
+
+$$
+x\Rightarrow P(C_1|x)=\frac{P(x|C_1)*P(C_1)}{P(x|C_1)*P(C_1)+P(x|C_2)*P(C_2)}\Rightarrow\begin{cases}P(C_1|x)>0.5\rightarrow class1\\P(C_1|x)<0.5\rightarrow class2\end{cases}
+$$
+
+#### Goodness of a function
+
+mean $\mu$ ,convariance $\sum$ Maximizing the likelihood
+
+#### Transformation
+
+![image-20230619221322687](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/Posterior_Probability.png?token=AR2JMK4ZDEPVGOSHW5PR3LTESC3UU)
+
+![image-20230619221506375](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/Posterior_Probability_1.png?token=AR2JMKZJT3X4JKVP6QWI7KTESC322)
+
+##### If $\sum_1=\sum_2=\sum$
+
+$$
+z=(\mu^1-\mu^2)^T{\sum}^{-1}x-\frac{1}{2}(\mu^1)^T({\sum}^1)^{-1}\mu^1+\frac{1}{2}(\mu^2)^T({\sum}^1)^{-1}\mu^2+\ln\frac{N1}{N2}
+$$
+
+$$
+z=w^Tx-b
+$$
+
+$$
+\Rightarrow P(C_1|x)=\sigma(w*x+b)
+$$
+
+------
+
