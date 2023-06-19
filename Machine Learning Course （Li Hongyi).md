@@ -139,7 +139,7 @@ Determined by Mean $\mu$ ,convariance matrix $\sum$
 
 #### Maximum Likelihood
 
-![Likelihood](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/Likelihood.png?token=AR2JMK7QXY27QM2G7GJMAB3ESCYZY)
+![](Likelihood.png)
 $$
 L(\mu,\sum)=f_{\mu,\sum}(x^1)*f_{\mu,\sum}(x^2).....f_{\mu,\sum}(x^79)
 $$
@@ -155,7 +155,7 @@ $$
 
 #### Back To Classification
 
-![image-20230619215322797](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/Classification_Operation?token=AR2JMK7RMROKMAW67H3DS6LESCZMO)
+![](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/Classification_Operation.png?token=AR2JMKYYYNCC44SL6JODZKLESC6V6)
 $$
 P(C_1|x)>0.5\Rightarrow x\in Class1
 $$
@@ -173,7 +173,7 @@ $$
 \Rightarrow\sum=\frac{79}{140}{\sum}^1+\frac{61}{140}{\sum}^2
 $$
 
-![image-20230619220430716](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/After_Modifying.png?token=AR2JMKYBSWAK42SGIRBOHY3ESC2TI)
+![](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/After_Modifying.png?token=AR2JMK7RXQGK3OGN5LRCT3TESC6VS)
 
 ### Three Steps
 
@@ -189,9 +189,11 @@ mean $\mu$ ,convariance $\sum$ Maximizing the likelihood
 
 #### Transformation
 
-![image-20230619221322687](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/Posterior_Probability.png?token=AR2JMK4ZDEPVGOSHW5PR3LTESC3UU)
 
-![image-20230619221506375](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/Posterior_Probability_1.png?token=AR2JMKZJT3X4JKVP6QWI7KTESC322)
+
+![](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/Posterior_Probability.png?token=AR2JMK6JZW26S2EHRJOUDS3ESC6UW)
+
+![](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/Posterior_Probability_1.png?token=AR2JMKY3UDWINDC7WIYPQU3ESC6VA)
 
 ##### If $\sum_1=\sum_2=\sum$
 
