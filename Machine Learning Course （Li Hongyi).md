@@ -92,5 +92,41 @@ $$
 
 $\lambda$越大，找到的越平滑
 
+
+
 ------
 
+
+
+## 3.Classification
+
+$$
+x\rightarrow Function \rightarrow ClassN
+$$
+
+### Ideal Alternatives
+
+#### Function(Model)
+
+$$
+x \Rightarrow \begin{cases}
+g(x) >0|Output=class1\\
+else|Output=class2
+\end{cases}
+$$
+
+#### Loss Function
+
+$$
+L(f)=\sum_n{\delta(f(x^n)\neq\hat{y}^n)}
+$$
+
+Number of times f get incorrect results on training data.
+
+#### Find best function
+
+Perceptron,SVM
+
+
+
+### Generative Model
