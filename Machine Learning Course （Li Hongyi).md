@@ -139,7 +139,7 @@ Determined by Mean $\mu$ ,convariance matrix $\sum$
 
 #### Maximum Likelihood
 
-![](Likelihood.png)
+![](![](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/Likelihood.png?token=AR2JMK2OEKMHKFKROJVI4WLESC6GA)
 $$
 L(\mu,\sum)=f_{\mu,\sum}(x^1)*f_{\mu,\sum}(x^2).....f_{\mu,\sum}(x^79)
 $$
@@ -211,3 +211,94 @@ $$
 
 ------
 
+## 4.Logistic Regression
+
+### Comparison with Linear Regression
+
+#### Step1
+
+##### For Logistic Regression
+
+$$
+f_{w,b}(x)=\sigma(\sum_iw_ix_i+b)
+$$
+
+Output: between 0 and 1
+
+##### For Linear Regression
+
+$$
+f_{w,b}(x)=\sum_iw_ix_i+b
+$$
+
+Output: any value
+
+#### Step2 Goodness of a Function
+
+Training Data : 
+
+![image-20230626204553421](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230626204553421.png)
+$$
+L(w,b)=f_{w,b}(x^1)f_{w,b}(x^2)(1-f_{w,b}(x^3))...f_{w,b}(x^N)
+$$
+The most likely $w^*$ and $b^*$ is the one with the largest $L(w,b)$
+$$
+w^*,b^*=arg\max_{w,b}L(w,b)
+$$
+
+$$
+\Rightarrow w^*,b^*=arg\max_{w,b}-\ln L(w,b)
+$$
+
+$$
+-lnf_{w,b}(x^1)\Rightarrow-[\hat{y}^1lnf(x^1)+(1-\hat{y}^1ln(1-f(x^1))]\\
+-lnf_{w,b}(x^2)\Rightarrow-[\hat{y}^2lnf(x^2)+(1-\hat{y}^2ln(1-f(x^2))]\\
+-lnf_{w,b}(x^3)\Rightarrow-[\hat{y}^3lnf(x^3)+(1-\hat{y}^3ln(1-f(x^3))]\\
+....
+$$
+
+$$
+\Rightarrow -lnL(w,b)=\sum_n{-[\hat{y}^nlnf_{w,b}(x^n)+(1-\hat{y}^nln(1-f_{w,b}(x^n))]}
+$$
+
+Cross entropy between two Bernoulli distribution
+
+![image-20230626205500605](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230626205500605.png)
+
+##### For Logistic Regression
+
+$\hat{y}^n$:1 for class 1, 0 for class 2
+$$
+L(f)=\sum_nC(f(x^n),\hat{y}^n)
+$$
+
+##### For Linear Regression
+
+$$
+L(f)=\frac{1}{2}\sum_n(f(x^n)-\hat{y}^n)^2
+$$
+
+#### Step3 Find the best function
+
+![image-20230626210646281](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230626210646281.png)
+
+![image-20230626210740806](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230626210740806.png)
+
+![image-20230626211035757](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230626211035757.png)
+
+##### For Logistic Regression and  LInear Regression
+
+The same
+$$
+w_i\leftarrow w_i-\eta\sum_n{-(\hat{y}^n-f_{w,b}(x^n))x_i^n}
+$$
+
+### If Use Logistic Regression with square error
+
+![image-20230626212043790](img/image-20230626212043790.png)
+
+用Square error 离目标很远时趋势也很小
+
+
+
+30：42
