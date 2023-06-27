@@ -123,7 +123,7 @@ $$
 
 Number of times f get incorrect results on training data.
 
-#### Find best function
+#### Find best fusnction
 
 Perceptron,SVM
 
@@ -297,8 +297,36 @@ $$
 
 ![image-20230626212043790](img/image-20230626212043790.png)
 
-用Square error 离目标很远时趋势也很小
+用Square error 离目标很远时趋势也很小,导致update很慢.
 
+### Discriminative(Logistic Regression) vs Generative Model
 
+#### Generative Model
 
-30：42
+ 做了假设 数据来源于某种分布 故适合于训练量少的情况
+
+With the assumption of probability distribution, less training data is needed
+
+With the assumption of probability distribution, more robust to the noise
+
+Priors and class-dependent probabilities can be estimated from different sources
+
+#### Discriminative 
+
+没有做任何假设  
+
+### Multi-class Classification
+
+![image-20230627144906101](C:\Users\HR\AppData\Roaming\Typora\typora-user-images\image-20230627144906101.png)
+
+### Limitation of Logistic Regression
+
+Boundary 为一根直线
+
+#### Feature Transformation
+
+Not alaways easy to find a good transformation
+
+##### Use to cascade logistic regression models
+
+Every Logistic regression called "Neuron" , Get Neural Network 神经网络
