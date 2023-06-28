@@ -317,7 +317,9 @@ Priors and class-dependent probabilities can be estimated from different sources
 
 ### Multi-class Classification
 
-![image-20230627144906101](C:\Users\HR\AppData\Roaming\Typora\typora-user-images\image-20230627144906101.png)
+![image-20230628203829769](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230628203829769.png)
+
+![image-20230628203900555](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230628203900555.png)
 
 ### Limitation of Logistic Regression
 
@@ -328,5 +330,7 @@ Boundary 为一根直线
 Not alaways easy to find a good transformation
 
 ##### Use to cascade logistic regression models
+
+![image-20230628204109807](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230628204109807.png)
 
 Every Logistic regression called "Neuron" , Get Neural Network 神经网络
