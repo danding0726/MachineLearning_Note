@@ -333,4 +333,36 @@ Not alaways easy to find a good transformation
 
 ![image-20230628204109807](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230628204109807.png)
 
-Every Logistic regression called "Neuron" , Get Neural Network 神经网络
+Every Logistic regression called "Neuron" ,Get Neural Network 神经网络
+
+------
+
+## 5.Brief Introduction of Deep Learning
+
+### Fully Connect Feedforwrad Netwrok
+
+![image-20230628211837643](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230628211837643.png)
+
+> Deep = Many hidden layers
+
+#### Converted to matrix operation
+
+![image-20230628212757483](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230628212757483.png)
+
+> Use GPU accelerate matrix operations
+
+### Loss Function
+
+![image-20230628215101738](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230628215101738.png)
+
+Total Loss: 
+$$
+L=\sum_{n=1}^N{C^n}
+$$
+Then find a function( network parameter $\theta$ ) in function set that minimizes total loss L
+
+### Gradient Descent (to find the best $\theta$)
+
+![image-20230628215652162](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230628215652162.png)
+
+ 
