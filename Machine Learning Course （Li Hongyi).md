@@ -420,15 +420,15 @@ y=b+\sum_jw_jx_j\\ \Rightarrow
 y= b+ \sum_ic_isigmoid(b_i+\sum_jw_{ij}x_j)
 $$
 
-![image-20230629153137792](C:\Users\HR\AppData\Roaming\Typora\typora-user-images\image-20230629153137792.png)
-
-Image 25:37
+![image-20230704204205637](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230704204205637.png)
 
 #### Loss function
 
+![image-20230704204315505](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230704204315505.png)
+
 #### Optimization
 
-![image-20230629154350495](C:\Users\HR\AppData\Roaming\Typora\typora-user-images\image-20230629154350495.png)
+![image-20230704204406265](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230704204406265.png)
 
 ### 6.3 Sigmoid $\rightarrow$ Rectified Linear Unit (ReLU)
 
@@ -499,6 +499,47 @@ class My_Model(nn.Module):
 
 ​       
 
+------
 
+## 7.Convolutional Neural Networks (CNN)
 
- 
+> [【機器學習2021】卷積神經網路 (Convolutional Neural Networks, CNN) - YouTube](https://www.youtube.com/watch?v=OP5HcXJg2Aw)
+
+###  7.1 Image Classification
+
+​	Image: 3-D tensor 
+
+		* height
+		* width
+		* 3 channels (RGB)
+
+#### 	Simplification (from fully connect)
+
+##### 		1.Choose Receptive filed for each neuron
+
+![image-20230704205720661](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230704205720661.png)
+
+​				Typical Setting : Set a Kernel Size (3*3) , each receptive field has a set of neurons (64), Set the value of stride.				<img src="https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230704210348158.png" alt="image-20230704210348158"  />
+
+##### 			2. Make some neurons sharing parameters
+
+​				Typical Setting: each receptive field has the neurons with the same set of parameters
+
+![image-20230704211205997](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230704211205997.png)
+
+Use both of the simplification , get **Convolutional Layer** (卷积层) for image .
+
+![image-20230704212643283](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230704212643283.png)
+
+##### 		3.Pooling - Max Pooling
+
+​			![image-20230704213107664](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230704213107664.png)
+
+​			Choose the max value of one set (also have other method <Min pooling>)
+
+### 7.2 the Whole CNN
+
+![image-20230704213414961](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230704213414961.png)
+
+flatten (拉成向量丢入 fully connected layers)
+
