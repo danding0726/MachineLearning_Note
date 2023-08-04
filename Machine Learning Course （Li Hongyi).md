@@ -64,7 +64,6 @@ $$
 
 - #### For two parameters
 
-
 1.$\omega^1 \leftarrow \omega^0-\eta*\frac{dL}{d\omega}|_{\omega=\omega^0,b=b^0}$  
 
 $b^1 \leftarrow b^0-\eta*\frac{dL}{db}|_{\omega=\omega^0,b=b^0}$
@@ -542,4 +541,89 @@ Use both of the simplification , get **Convolutional Layer** (卷积层) for ima
 ![image-20230704213414961](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230704213414961.png)
 
 flatten (拉成向量丢入 fully connected layers)
+
+------
+
+## 8.Gradient Descent
+
+> [ML Lecture 3-1: Gradient Descent - YouTube](https://www.youtube.com/watch?v=yKKNr-QKz2Q)
+
+### 8.1 Tuning your learning rate
+
+$$
+\theta^i = \theta^{i-1}-\eta\nabla L(\theta^{i-1})
+$$
+
+​	Set the learning rate  $\eta$  carefully
+
+![image-20230804210307894](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230804210307894.png)
+
+#### 	How to get an adaptive learning rate ?
+
+Adagrad  
+
+![image-20230804210821418](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230804210821418.png)
+$$
+w^1 \leftarrow w^0 - \frac{\eta^0}{\sigma^0}g^0\quad \sigma^0=\sqrt{(g^0)^2}\\
+w^2 \leftarrow w^1 - \frac{\eta^1}{\sigma^1}g^1\quad \sigma^1=\sqrt{\frac{1}{2}[(g^0)^2+(g^1)^2]}\\
+...\\
+
+w^{t+1}\leftarrow w^{t}-\frac{\eta^t}{\sigma^t}g^t \quad \sigma^t=\sqrt{\frac{1}{t+1}\sum^t_{i=0}(g^i)^2} \quad\eta^t=\frac{\eta}{\sqrt{t+1}}
+$$
+
+$$
+\Rightarrow w^{t+1}\leftarrow w^{t}-\frac{\eta}{\sqrt{\sum^t_{i=0}(g^i)^2}}g^t
+$$
+
+### 8.2 Stochastic Gradient Descent
+
+​	Pick an example $x^n$ , then Loss for only one example
+
+![image-20230804214530224](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230804214530224.png)
+
+### 8.3 Feature Scaling
+
+​	![image-20230804215116338](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230804215116338.png)
+
+##### 					Method
+
+##### 					<img src="https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230804215427823.png" alt="image-20230804215427823" style="zoom:50%;" />	
+
+### 	8.4 Taylor Series
+
+​			Let h(x) be any function infinitely differentiable around x= x0
+$$
+h(x)=\sum^\infty_{k=0}\frac{h^{(k)}(x_0)}{k!}(x-x_0)^k\\
+h(x)\approx h(x_0)+h^{'}(x_0)(x-x_0)
+$$
+
+#### Multivariable Taylor Series		
+
+when x and y is closed to x0 and y0	
+$$
+h(x,y)\approx h(x_0,y_0)+\frac{\partial h(x_0,y_0)}{\partial x}(x-x_0)+\frac{\partial h(x_0,y_0)}{\partial y}(y-y_0)
+$$
+![image-20230804221300840](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230804221300840.png)
+
+So find $\theta_1$ and $\theta_2$ minimizing $L(\theta)$
+
+![image-20230804221610981](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230804221610981.png)
+
+<img src="https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230804221914574.png" alt="image-20230804221914574" style="zoom: 50%;" />
+
+This is gradient descent.
+
+### 8.5 Limition of Gradient Descent 
+
+- Stuck at local minima
+- Stuck at saddle point  停在微分为0处
+- very slow at plateau
+
+------
+
+
+
+## 9.Bckpropagation
+
+
 
