@@ -623,7 +623,63 @@ This is gradient descent.
 
 
 
-## 9.Bckpropagation
+## 9.Backpropagation  
+
+In Neural Networks, we have millions of parameters, to compute the gradients efficiently, we use <u>Backpropagation</u>.
+
+### 9.1 Chain Rule
+
+s
+
+### 9.2 Back to Neural Network
+
+Loss Function 
+$$
+L(\theta )=\sum_{n=1}^N{C^n(\theta)}\Rightarrow \frac{\partial L(\theta)}{\partial w} =\sum_{n=1}^N{\frac{\partial C^n(\theta)}{\partial w}}
+$$
+
+#### Exemple
+
+<img src="https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230810211758740.png" alt="image-20230810211758740" style="zoom:50%;" />
+
+Forward Pass: 
+$$
+\partial z/\partial w_1 = x_1 \\
+\partial z/\partial w_2 = x_2 \\
+$$
+connected by the weight.
 
 
 
+Backward Pass:
+
+![image-20230810212233023](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230810212233023.png)
+$$
+\Rightarrow \frac{\partial C}{\partial z}=\sigma'(z)[w_3\frac{\partial C}{\partial z'}+w_4 \frac{\partial C}{\partial z''}]
+$$
+Assume this like a Neural Network
+
+![image-20230810213352782](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230810213352782.png)
+
+Case1. Output layer
+
+![image-20230810213702072](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230810213702072.png)
+$$
+\frac{\partial C}{\partial z'} = \frac{\partial y_1}{\partial z'}\frac{\partial C}{\partial y_1}
+$$
+
+$$
+\frac{\partial C}{\partial z''} = \frac{\partial y_2}{\partial z''}\frac{\partial C}{\partial y_2}
+$$
+
+Case2. Not Output layer
+
+![image-20230810213811516](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230810213811516.png)
+
+So we compute $\partial C/\partial z$ from the output layer.
+
+![image-20230810214041779](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230810214041779.png)
+
+### 9.3 Summary
+
+![image-20230810214323148](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230810214323148.png)
