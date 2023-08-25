@@ -625,11 +625,11 @@ This is gradient descent.
 
 ## 9.Backpropagation  
 
+> [ML Lecture 7: Backpropagation - YouTube](https://www.youtube.com/watch?v=ibJpTrp5mcE)
+
 In Neural Networks, we have millions of parameters, to compute the gradients efficiently, we use <u>Backpropagation</u>.
 
 ### 9.1 Chain Rule
-
-s
 
 ### 9.2 Back to Neural Network
 
@@ -683,3 +683,42 @@ So we compute $\partial C/\partial z$ from the output layer.
 ### 9.3 Summary
 
 ![image-20230810214323148](https://raw.githubusercontent.com/danding0726/MachineLearning_Note/main/img/image-20230810214323148.png)
+
+------
+
+## 10.Pytorch tutorial
+
+> [2022-PyTorch Tutorial 1_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1Wv411h7kN?p=6&vd_source=0c60dbefcb6f954b286fd810433cae74)
+
+### 10.1 Dataset&Dataloader
+
+```python
+from torch.utils.data import Dataset, DataLoader
+
+
+class MyDataset(Dataset):
+    //Read Data & preprocess
+	def _init_(self, file):
+		self.data = ...
+        
+   	//Returns one sample at a time
+    def _getitem_(self, index):
+        return self.data[index]
+    
+    //Returns the size of the dataset
+    def	_len_(self):
+        return len(self.data)
+   
+```
+
+```python
+dataset = MyDataset(file)
+dataloader = DataLoader(dataset, batch_size=5, shuffle= False)
+```
+
+### 10.2 Tensors
+
+​		High-dimensional matrices(arrays)
+
+​		多个函数有点杂，建议直接看ppt
+
